@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Registration Form</title>
+</head>
+<body>
+    <p>My Registration Form</p>
+    <label for="first_name">First Name:</label>
+    <input type="text" id="first_name" name="first_name">
+    <label for="last_name">Last Name:</label>
+    <input type="text" id="last_name" name="last_name">
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email">
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password">
+    <label for="pw_confirm">Password Confirmation:</label>
+    <input type="password" id="pw_confirm" name="password_confirmation">
+
+    <label>Birthday (month and year): <input type="month" name="bdaymonth" /></label>
+
+    <label for="male">Male</label>
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="female">Female</label>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="other">Other</label>
+    <input type="radio" id="other" name="gender" value="other">
+
+    <p>A short description about yourself</p>
+    <textarea name="description"></textarea>
+
+    <p>Favorite Language</p>
+    <select name="language">
+            <option value="javascript">JavaScript</option>
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+            <option value="python">Python</option>
+            <option value="other">Other</option>
+    </select>
+     
+    <input type="submit" value="Submit">
+
+
+</body>
+</html>

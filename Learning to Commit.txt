@@ -1,0 +1,14 @@
+Assignment: Learning to Commit
+
+cd
+ls
+cd CodingDojo
+mkdir gittest
+git add aboutMe.txt
+git commit -m "updated aboutMe"
+git status
+git log
+git revert -n HEAD
+open aboutMe.txt
+git commit -m "updated aboutMe with favorite book"
+
