@@ -1,0 +1,12 @@
+cd
+mkdir GitRepoAssignments
+ls
+touch readme.md
+git init
+git status
+git add .
+git status
+git commit -m "added readme.md"
+git remote add origin https://github.com/jrichard68/GitHubRepoAssignment.git
+Jamies-Air:GitHubRepoAssignment 
+git push -u origin master

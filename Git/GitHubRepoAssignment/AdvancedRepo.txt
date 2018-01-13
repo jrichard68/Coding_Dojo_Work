@@ -1,0 +1,9 @@
+new repo on GitHub
+new local repo 
+new files inside basic_repo local folder
+added, committed, and pushed to GitHub
+changes files in local folder
+added, committed to local repo
+push to Git repo using "git push origin master" command
+
+not sure I understand that
