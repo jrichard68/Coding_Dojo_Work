@@ -70,3 +70,20 @@ button {
     color: white;
     margin-left: 40px;
 }
+#footer {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 5px auto;
+    font-size: 12px;
+    list-style-type: none;
+    vertical-align: top;
+    }
+    #footer-links li {
+    display: inline;
+    }
+    #footer li img {
+    width: 15px;
+    vertical-align: middle;
+    }
+    #footer p{
+        margin: 0px 0px 0px 120px;
+    }
