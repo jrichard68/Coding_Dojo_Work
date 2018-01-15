@@ -1,0 +1,72 @@
+* {border: 1px solid green;
+}
+#wrapper {
+    width: 500px;
+    background-color: whitesmoke;
+    margin: 5px auto;
+}
+#header {
+    background-color: whitesmoke;   
+}
+    #header h1, #header h2 {
+        width: 200px;
+        vertical-align: top;
+        margin: 5px auto;
+        display: inline-block;
+}
+h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+}
+h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+h3 {
+    background-color: grey;
+    color: white;
+    padding: 5px;
+    margin: 0px;
+}
+#main-content {
+    background-color: rosybrown;
+    width: 480px;
+    margin: 5px auto;
+}
+#bio {
+    background-color: white;
+}
+    #bio img {
+        width: 200px;
+        display: inline-block;
+        margin: 5px; align-self: auto;
+        /*border: 2px solid grey;*/
+}
+    #bio div {
+        display: inline-block;
+        vertical-align: top;
+        width: 240px;
+    }
+p {
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    vertical-align: top;
+}
+.projects {
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px auto;
+    width: 100px;
+}
+.tech_images {
+    display: inline-block;
+    margin: 5px;
+    width: 10px;
+}
+button {
+    background-color: green;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    margin-left: 40px;
+}
