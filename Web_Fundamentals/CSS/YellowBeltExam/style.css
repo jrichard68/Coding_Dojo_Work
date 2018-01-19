@@ -1,0 +1,28 @@
+body *{
+	padding:0px;
+	margin:0px;
+	font-family: 	Arial;
+}
+#wrapper{
+    width: 970px;
+    height: 1000;
+    background-color: #0e0e0e;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+#top-content{
+    width: 966px;
+    background-color:#1a1a1a;
+    color: #cfcfca;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#top-content img{
+    width: 300px;
+    margin-top: 20px;
+}
+#top-content h4{
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 35px;
+    margin-left: 475px;
+}

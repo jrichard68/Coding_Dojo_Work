@@ -1,0 +1,45 @@
+.container {
+    width: 970px;
+    height: 800px;
+    outline: 1px dotted red;
+    background-color: #1c345d;
+    padding: 10px;
+}
+.header {
+    width: 100%;
+    background-color: #cf3136;
+    border-radius: 10px;
+
+}
+.header h1 {
+    margin: 0px;
+    padding: 10px 0 15px 10px;
+    color: white;
+}
+.navbar {
+    width: 180px;
+    background-color: #317c8c;
+    border-radius: 15px;
+    margin: 10px;
+    padding: 10px;
+    display: inline-block;
+    vertical-align: top;
+
+}
+.navbar ul {
+    padding-left: 20px;
+    margin: 0px;
+}
+.navbar a {
+    color: #5dcdcc;
+    font-size: 12px;
+}
+.main-content {
+    width: 725px;
+    height: 400px;
+    margin-left: 15px;
+    margin-top: 10px;
+    display: inline-block;
+    background-color: black;
+    border-radius: 15px;
+}

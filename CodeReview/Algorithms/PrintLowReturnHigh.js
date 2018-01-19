@@ -14,7 +14,6 @@ function lowHigh(arr) {
     console.log("lowNum:", lowestNumber);
     return highestNum;
 }
-
 // var returned = lowHigh([2, 3, 5, 1, 3]); // print 1, return 5
 // console.log("returned:", returned);
 var myArr = [1, 2, 3, 5, 6, 2, 7]; // print 1, return 7

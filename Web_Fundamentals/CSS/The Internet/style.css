@@ -1,0 +1,196 @@
+* {
+	vertical-align: baseline;
+	font-weight: inherit;
+	font-family: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	border: 0 none;
+	outline: 0;
+	padding: 0;
+	margin: 0;
+    }
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+    width: 90px;
+    margin-bottom: -20px;
+}
+h1 {        
+    font-size: 40px;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 25px;
+}
+h2 {
+    font-size: 30px;
+    background-color: #487ca9;
+    width: 900px;
+    color: white;
+    padding: 10px;
+    border: 1px solid #195a99;
+}
+#wrapper {
+    background: linear-gradient(to bottom, rgba(228,228,228,1), rgba(228,228,228,0));
+    width: 920px;
+}
+#sidebar {
+    width: 200px;
+    display: inline-block;
+}
+
+h5, h6 {
+    color: black;
+    font-weight: bold;
+    margin: 10px;
+}
+h5 {
+    font-size: 16px;
+}
+h6 {
+    font-size: 12px;
+    margin-top: 10px;
+}
+button {
+    border-radius: 5px;
+    box-shadow: 2px 2px #888888;
+    margin-left: 10px;
+    width: 180px;
+    padding: 5px;
+}
+.video {
+    background: linear-gradient(rgba(98, 159, 209, 0.75), rgba(37, 104, 160, 1));
+}
+.resources {
+    background: linear-gradient(rgba(240,121,57,.75),rgba(240,121,57,1));
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+#sidebar hr {
+    width: 180px;
+    margin: 5px auto;
+    color: #888888;
+    height: 2px;
+    background-color: #888888
+}
+.container {
+    background-image: url("images/ad_background.png");
+    margin: 10px;
+    padding-bottom: 35px;
+}
+.container p {
+    font-size: 22px;
+    text-align: center;
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+}
+.container img {
+    width: 70px;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+.container button {
+    background-color: #54c9de;
+    border-radius: 5px;
+    box-shadow: 2px 2px black;
+    margin: 25px 10px 10px 15px;
+    width: 150px;
+    color: white;
+}
+#main-contents {
+    width: 700px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px 0px 5px 10px;
+}
+#home {
+    width: 20px;
+    display: inline-block;
+    vertical-align: top;
+}
+#main-contents h4 {
+    font-size: 18px;
+    color: #487ca9;
+    display: inline-block;
+    vertical-align: top;
+}
+#phone {
+    width: 40px;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 380px;
+    margin-top: 10px;
+}
+#time-phone {
+    width: 200px;
+    display: inline-block;
+    margin-top: -5px;
+} 
+.call-info, .number {
+    text-align: center;
+}
+#main-contents hr {
+        width: 700px;
+        color: #888888;
+        height: 2px;
+        background-color: #888888;
+        margin: 15px auto;
+}
+.number {
+    font-size: 22px;
+    color: #50c2df;
+    font-weight: bold;
+}
+.call-info {
+    font-size: 12px;
+}
+h3 {
+    font-size: 18px;
+    color: #487ca9;
+    font-weight: bold;
+}
+.computers {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+#main-contents li {
+    font-size: 14px;
+    margin-left: 35px;
+    font-size: 14px;
+}
+.server {
+    width: 250px;
+    margin: 15px 5px 15px 200px;
+}
+#footer {
+    border-right: 3px solid #2885e1;
+    border-top: 3px solid #2885e1;
+    border-left: 3px solid #2885e1;
+    width: 680px;
+    margin-left: 225px;
+}
+#footer img {
+    width: 100px;
+    margin-top: 10px;
+    margin-left: 10px;
+    display: inline-block;
+}
+.big {
+    margin: 10px;
+    width: 525px;
+    display: inline-block;
+    vertical-align: top;
+}
+.big p {
+    margin: 3px;
+}
+.blue-link {
+    color: #50c2df;
+}
+.w3-button {
+    background: linear-gradient(rgba(98, 159, 209, 0.75), rgba(37, 104, 160, 1));
+    color: white;
+    margin-left: 5px;
+}
