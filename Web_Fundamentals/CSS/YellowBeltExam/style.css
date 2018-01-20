@@ -5,14 +5,16 @@ body *{
 }
 #wrapper{
     width: 970px;
-    height: 1000;
     background-color: #0e0e0e;
     padding-left: 5px;
     padding-right: 5px;
+    color: white;
+}
+a {
+    text-decoration: none;
 }
 #top-content{
     background-color:#1a1a1a;
-    color: #cfcfca;
     font-family: Arial, Helvetica, sans-serif;
 }
 #logo{
@@ -52,7 +54,6 @@ li{
 }
 #navbar a{
     font-size: 14px;
-    text-decoration: none;
     color:#a0a1a1;
     font-weight: bold;
 }
@@ -61,7 +62,7 @@ li{
 }
 .content_items {
     width: 200px;
-    vertical-align: top;
+    line-height: 20px;
 }
 .content_items h2{
     font-family: 'Times New Roman', Times, serif;
@@ -70,4 +71,58 @@ li{
 }
 .content_items h3 {
     font-size: 14px;
+}
+#middle-content {
+    margin: 30px;
+}
+#middle-content h2, #middle-content p{
+    width: 600px;
+    display: inline-block;
+}
+#middle-content h2 {
+    margin-bottom: 5px;
+}
+#middle-content p {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 100px;
+}
+button{
+    background: linear-gradient(#f29c5b,#ef7f3a);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 165px;
+    padding-top: 15px; 
+    padding-bottom: 15px;
+    font-size: 20px;
+    margin-bottom: 55px;
+    margin-left: 120px;
+}
+#footer {
+    background-color: #1a1a1a;
+    padding-left: 10px;
+}
+#footer h2{
+    font-family: 'Times New Roman', Times, serif;
+    display: inline-block;
+}    
+#footer a {
+    color: #ef7f3a;
+    font-style: italic;
+    font-size: 14px;
+    display: inline-block;
+    margin-left: 800px;
+}
+.portfolios h3 {
+    font-size: 18px;
+    color: #ed7939;
+}
+.portfolios {
+    width: 194px;
+    display: inline-block;
+    margin: 20px 15px;
+}
+.portfolios img {
+    border: 4px solid #363636;
 }
