@@ -9,16 +9,149 @@
 	padding: 0;
 	margin: 0;
 	}
-	#wrapper {
+
+#wrapper {
 		width: 970px;
-		height: 1500px;
 		background-color: black;
-		padding-right: 5px;
-		padding-left: 5px;
-	}
+		padding-right: 10px;
+		padding-left: 10px;
+		font-family: Arial, Helvetica, sans-serif;
+}
 h2{
 	color: #eb7b39;
 }
-p{
+p, h3 {
 	color: #eeeeee;
+}
+a {
+	text-decoration: none;
+}
+#header {
+	background-color: #1a1a1a;
+	padding: 15px;
+}
+#header img {
+	width: 250px;
+	height: auto;
+	vertical-align: top;
+}
+#header p {
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 520px;
+	margin-top: 15px;
+}
+#nav_bar {
+	background: radial-gradient(#555555, #1e1e1e);
+	padding: 15px;
+}
+#nav_bar ul {
+	list-style: none;
+}
+#nav_bar li {
+	display: inline-block;
+	border-right: 1px solid #3b3b3b;
+	padding-right: 15px;
+	margin-left: 10px;
+}
+#nav_bar li:last-child {
+	border-right: none;
+}
+#nav_bar a {
+	color: #a2a2a2;
+	text-decoration: none;
+	font-size: 15px;
+}
+.white {
+	color: #dbdcd6;
+} 
+.arrows{
+	color: #a2a2a2;
+	margin-left: 5px;
+}
+#woman {
+	vertical-align: top;
+	width: 969px;
+}
+#link_bar {
+	background-color: #1a1a1a;
+	padding: 45px 10px 45px 10px;
+}
+#link_1, #link_2, #link_3, #link_4 {
+	display: inline-block;
+	width: 185px;
+	line-height: 20px;
+}
+#link_bar p{
+	font-size: 14px;
+}
+#cloud, #clock, #locator, #arrows {
+	display: inline-block;
+}
+#link_bar img{
+	vertical-align: top;
+}
+#buy_bar {
+	padding: 30px;
+}
+#buy_bar h3 {
+	font-size: 27px;
+}
+#buy_text {
+	width: 600px;
+	display: inline-block;
+	margin-left: 15px;
+}
+#buy_text p {
+	margin-top: 5px;
+	line-height: 20px;
+	font-size: 14px;
+}
+button {
+	padding: 15px 30px 15px 30px;
+	background: radial-gradient(#f6b889, #ef7f3a);
+	color: #eeeeee;
+	border-radius: 5px;
+	margin-left: 155px;
+	vertical-align: top;
+	margin-top: 10px;
+}
+#footer {
+	background-color:#1e1e1e;
+	padding: 20px 20px 0px 10px;
+}
+#footer_top h3 {
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 20px;
+	display: inline-block;
+	margin-left: 13px;
+}
+#footer_top a {
+	color: #eb7b39;
+	margin-left: 715px;
+	vertical-align: top;
+	font-size: 12px;
+}
+.portfolio {
+	width: 205px;
+	display: inline-block;
+	vertical-align: top;
+	margin: 13px;
+}
+.portfolio img {
+	border: 5px solid #363636;
+}
+.portfolio h2 {
+	margin-top: 5px;
+}
+.portfolio p {
+	margin-top: 5px;
+	line-height: 20px;
+	font-size: 14px;
+	margin-top: 10px;
+}
+#back_to_top {
+	margin-left: 860px;
+	color: #767677;
+	font-size: 10px;
 }

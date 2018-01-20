@@ -1,0 +1,173 @@
+*{
+	margin:0;
+	padding:0;
+	/*border: 1px dotted red;*/
+	font-family: Arial;
+}
+.wrapper {
+	width: 960px;
+	height: 100px;
+}
+.wrapper h2 {
+	background-color: #4076a5;
+	color:white;
+	padding: 15px;
+	margin-top: -15px
+}
+.logo {
+	width: 99%;
+}
+.logo img{
+	width: 50px;
+	height: auto;
+}
+.logo h1{
+	display:inline-block;
+	margin-bottom: 10px;
+	vertical-align: bottom;
+}
+.logo h1 span {
+	color:#28659d;
+}
+.main{
+	background: -webkit-linear-gradient(to top, #ffffff, #f5f5f5); /* Safari 5.1- 6.0 */
+  background: -o-linear-gradient(to top, #ffffff, #f5f5f5); /* Opera 11.6-12.0 */
+  background: -moz-linear-gradient(to top, #ffffff, #f5f5f5); /* Firefox 3.6-15 */
+  background: linear-gradient(to top, #ffffff, #f5f5f5); 
+}
+.side_bar{
+	width: 250px;
+	display: inline-block;
+	vertical-align: top;
+	padding: 5px;
+}
+.side_bar	p{
+	font-weight: 900;
+	margin-left: 5px;
+}
+.side_bar .red {
+	color:red;
+}
+.side_bar span {
+	color:#28659d ;
+}
+.side_bar button {
+	width: 95%;
+	padding: 10px 0;
+	margin-bottom: 10px;
+	border-radius: 10px;
+	font-size: 20px;
+	color: white;
+	font-weight: 900;
+}
+.side_bar .blue_btn{
+	background-color: #3a74a8;
+}
+.side_bar .orange_btn{
+	background-color: #ec8c19;
+}
+.side_bar div.reinvent.reinvent	{
+	background-image: url('./images/ad_background.png');
+	height: 300px;
+	padding-top: 20px;
+}
+.side_bar div.reinvent h3{
+	font-size: 30px;
+	text-align: center;
+	color: white;
+}
+.side_bar div.reinvent	img {
+	width: 100px;
+	display: block;
+	margin: 0 auto;
+}
+.side_bar div.reinvent	button {
+	background-color: #3bc7de;
+	width: 87%;
+	padding: 5px;
+	font-size: 16px;
+	margin: 0 auto;
+	display: block;
+}
+
+.main_content{
+	width: 695px;
+	display:inline-block;
+}
+.main_header {
+		border-bottom: 1px solid gray;
+		padding-bottom: 10px;
+}
+.main_header img{
+	width:20px;
+}
+.main_header h3 {
+	display:inline-block;
+}
+.main_header .phone_img {
+	vertical-align: top;
+	margin-left: 50%;
+	width: 45px;
+	margin-top: 10px;
+}
+.main_header .contact_info {
+	display:inline-block;
+	vertical-align: top;
+}
+.contact_info h3 {
+	color:#14c1de;
+	font-size: 36px
+}
+.contact_info p {
+	font-size: 10px;
+	color: #6d6d6d;
+}
+.main_info {
+	padding-top: 10px;
+}
+.main_info h3	{
+	color:#28659d;
+}
+.main_info h4 {
+	font-weight: normal;
+}
+.main_info h4 span {
+	font-weight: 900;
+}
+.main_info ul {
+	margin-left: 50px;
+}
+.main_info a {
+	color: #2ba7ba;
+	text-decoration: none;
+}
+.main_info	img {
+	width: 200px;
+	margin: 0px auto;
+	display: block;
+}
+.main_info ol {
+	margin-left: 50px;
+}
+.html_css_js {
+	margin-top: 20px;
+	border-top: 5px #0084df solid;
+	border-right: 5px #0084df solid;
+	border-left: 5px #0084df solid;
+
+}
+.html_css_js img{
+	width: 100px;
+	display: inline-block;
+}
+.html_css_js div	{
+	display:inline-block;
+	width: 580px;
+}
+Files
+The_Internet.zip	January 18, 2018	
+  No file chosen UPLOAD  or 
+
+Add Github Url
+SAVE
+Privacy Policy

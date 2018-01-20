@@ -1,6 +1,10 @@
 
 /*this is for Yellow Belt nav_bar, accept don't use float*/
 li {
+    display: inline;
+}
+
+li {
     float: left;
     border-right:1px solid #bbb;
 }
