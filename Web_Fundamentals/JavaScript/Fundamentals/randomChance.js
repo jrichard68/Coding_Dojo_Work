@@ -1,8 +1,11 @@
+
 function slots(numQuarters) {
-     while(numQuarters > 0){
-        var winningNum = Math.floor(Math.random() * 100);
+    var winningNum = Math.floor;
+    var winNumCoins = Math.floor;
+    while(numQuarters > 0){
+        (Math.random() * 100);
         if(winningNum == 1) {
-            var winNumCoins = Math.floor(Math.random() * 50)+50;
+            (Math.random() * 50)+50;
             return winNumCoins + numQuarters;
         }
         else {
