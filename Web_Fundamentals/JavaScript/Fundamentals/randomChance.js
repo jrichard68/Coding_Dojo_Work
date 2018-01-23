@@ -4,7 +4,6 @@ function slots(numQuarters) {
     var winNumCoins = Math.floor;(Math.random() * 50)+50;
     while(numQuarters > 0){
         if(winningNum == 1) {
-            
             return winNumCoins + numQuarters;
         }
         else {
