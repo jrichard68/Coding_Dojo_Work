@@ -1,0 +1,9 @@
+#wrapper {
+    width: 700px;
+    background-color: aqua;
+    height: 1000px;
+}
+
+#show {
+    display: none;
+}
