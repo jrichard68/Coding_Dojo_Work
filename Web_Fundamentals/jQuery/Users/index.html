@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add User</title>
+    <link rel="stylesheet" href="style.css">
+    <script type= "text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript">
+       
+        $(document).ready(function(){
+
+            $('#submit').click(function() {
+                $('table').append('<tr><td>' + $('input[name="first_name"]').val() + '</td><td>'
+                    + $('input[name="last_name"]').val() + '</td><td>'
+                    + $('input[name="email"]').val() + '</td><td>'
+                    + $('input[name="phone_number"]').val() + '</td></tr>');
+                return false;
+            });
+        });
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email Addres</th>
+            <th>Contact #</th>
+        </tr>
+    </table>
+    <h2>Add User</h2>
+    <form>
+        First name:
+        <input type="text" name="first_name">
+        Last name: 
+        <input type="text" name="last_name">
+        Email Address:
+        <input type="text" name="email">
+        Contact No:
+        <input type="text" name="phone_number">
+    </form>
+    <input id="submit" type="submit" value="Add User">
+</body>
+</html>

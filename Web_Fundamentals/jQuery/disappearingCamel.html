@@ -6,7 +6,11 @@
     <script type="text/javascript">
     $(document).ready(function(){
         $('img').click(function(){
-            $(this).hide()
+            $(this).hide("slow")
+        })
+
+        $("button").click(function(){
+            $("img").show();
         })
     })
     </script>
@@ -19,6 +23,7 @@
     <img src="camel.png" id="image5" alt="image of camel">
     <img src="camel.png" id="image6" alt="image of camel">
     <img src="camel.png" id="image7" alt="image of camel">
-    <img src="camel.png" id="image8" alt="image of camel">    
+    <img src="camel.png" id="image8" alt="image of camel">   
+    <button>Restore</button> 
 </body>
 </html>

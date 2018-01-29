@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="description" content="jQuery assignment">
+	<title>Ninja to Cat</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('img').click(function(){
+				$(this).attr('temp', $(this).attr('src'));
+				$(this).attr('src', $(this).attr('data-alt-src'));
+				$(this).attr('data-alt-src', $(this).attr('temp'));
+			});
+		});		
+	</script>
+</head>
+<body>
+	<img src="cat0.png" data-alt-src='ninja0.png' temp=""><br>
+	<img src="cat1.png" data-alt-src='ninja1.png' temp=""><br>
+	<img src="cat2.png" data-alt-src='ninja2.png' temp=""><br>
+	<img src="cat3.png" data-alt-src='ninja3.png' temp=""><br>
+	<img src="cat4.png" data-alt-src='ninja4.png' temp="">
+</body>
+</html>

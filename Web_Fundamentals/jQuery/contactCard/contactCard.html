@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contact Card</title>
+    <link rel="stylesheet" href="style.css">
+    <script type= "text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" >
+        $(document).ready(function(){
+            $('button').click(function(){
+                var first = $("#first").val();
+                var second = $("#second").val();
+                var third = $("#desc").val();
+                $('#right').append("<div id = 'card'><p>)
+
+
+
+
+
+                return false
+            });
+            $(document).on('click', '', function(){
+                alert('you clicked me!');
+            })
+        });
+    </script>
+</head>
+<body>
+    <div id="left">
+        <form action="process.php" method="post">
+            First Name: <input type="text" name="first_name" id="first">
+            Last Name: <input type="text" name="last_name" id="last">
+            Description: <textarea name="Description" id="desc" placeholder="Enter description"cols="30" rows="10"></textarea>
+            <button>Add User</button>
+        </form>
+    </div>
+    <div id="right">
+    </div>
+</body>
+</html>
