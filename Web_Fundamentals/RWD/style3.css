@@ -1,0 +1,34 @@
+* {
+    padding: 0px;
+    margin: 5px;
+}
+h1 {
+    background-color: gray;
+}
+p {
+    background-color: silver;
+}
+h3 {
+    background-color: bisque;
+}
+.col {
+    /*  set the universal stylings for all columns, regardless of screen size */
+    display:inline-block;
+    vertical-align: top;
+    padding: 20px;
+}
+@media only screen and (max-width:480px) {
+    .sm-4 {
+        width: 100%;
+    }
+}
+@media only screen and (min-width:481px) {
+    .med-4 {
+        width: 100%;
+    }
+}
+@media only screen and (min-width:1024px) {
+    .lg-4 {
+        width: 100%;
+    }
+}

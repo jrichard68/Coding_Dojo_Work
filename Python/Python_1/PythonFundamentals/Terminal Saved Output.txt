@@ -1,0 +1,49 @@
+Last login: Sun Feb  4 09:10:50 on ttys000
+Jamies-Air:~ jamierichard$ l
+-bash: l: command not found
+Jamies-Air:~ jamierichard$ ls
+Applications		Dropbox			Projects
+Coding_Dojo_Work	Library			Public
+Creative Cloud Files	Movies			iCloud Drive (Archive)
+Desktop			Music			node_modules
+Documents		NoloshaCusub		package-lock.json
+Downloads		Pictures
+Jamies-Air:~ jamierichard$ cd Coding_Dojo_Work
+Jamies-Air:Coding_Dojo_Work jamierichard$ ls
+1942
+CodeReview
+DojoAssignments
+Python
+Web_Fundamentals
+algorithm_challenges__e_book_for_dojo_students.epub
+jamie.jpg
+wesSchedule.txt
+Jamies-Air:Coding_Dojo_Work jamierichard$ cd Python
+Jamies-Air:Python jamierichard$ ls
+Python_1
+Jamies-Air:Python jamierichard$ cd Python_1
+Jamies-Air:Python_1 jamierichard$ ls
+firstPython	helloWorld.py	me.py		secondPython.py	tryPip.txt
+Jamies-Air:Python_1 jamierichard$ open helloWorld.py
+Jamies-Air:Python_1 jamierichard$ python helloWorld.py
+Hello World!
+Jamies-Air:Python_1 jamierichard$ pwd
+/Users/jamierichard/Coding_Dojo_Work/Python/Python_1
+Jamies-Air:Python_1 jamierichard$ python helloWorld.py
+Hello World!
+Jamies-Air:Python_1 jamierichard$ print "Goodbye World!"
+-bash: !": event not found
+Jamies-Air:Python_1 jamierichard$ pythn helloWorld.py
+-bash: pythn: command not found
+Jamies-Air:Python_1 jamierichard$ python helloWorld.py
+Jamies-Air:Python_1 jamierichard$ print "Hello World!"
+-bash: !": event not found
+Jamies-Air:Python_1 jamierichard$ python helloWorld.py
+Jamies-Air:Python_1 jamierichard$ Hello World!
+-bash: Hello: command not found
+Jamies-Air:Python_1 jamierichard$ ls
+firstPython	helloWorld.py	me.py		secondPython.py	tryPip.txt
+Jamies-Air:Python_1 jamierichard$ python helloWorld.py
+Jamies-Air:Python_1 jamierichard$ print "Hello World!"
+-bash: !": event not found
+Jamies-Air:Python_1 jamierichard$ 

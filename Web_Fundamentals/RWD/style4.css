@@ -1,0 +1,74 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+#container {
+    border: 1px solid black;
+    padding: 5px;
+}
+#header {
+    width: 704px;
+    height: 100px;
+    background-color: green;
+}
+#sidebar {
+    width: 100px;
+    height: 400px;
+    background-color: blue;
+    vertical-align: top;
+    display: inline-block
+}
+#main-content {
+    width: 600px;
+    height: 400px;
+    background-color:red;
+    display: inline-block;
+}
+.info-blocks {
+    width: 180px;
+    height: 100px;
+    display: inline-block;
+    background-color: yellow;
+}
+#footer {
+    width: 580px;
+    height: 100px;
+    background-color: purple;
+}
+.col {
+    /*  set the universal stylings for all columns, regardless of screen size */
+    display:inline-block;
+    vertical-align: top;
+    padding: 20px;
+}
+@media only screen and (max-width:480px) {
+    .sm-4 {
+        width: 100%;
+    }
+    .sm-0 {
+        display: none;
+    }
+}
+@media only screen and (min-width:481px) {
+    .med-4 {
+        width: 100%;
+    }
+    .med-2 {
+        width: 50%;
+    }
+    .med-0 {
+        display: none;
+    }
+}
+@media only screen and (min-width:1024px) {
+    .lg-4 {
+        width: 100%;
+    }
+    .lg-3 {
+        width: 75%;
+    }
+    .lg-1 {
+        width: 25%;
+    }
+}

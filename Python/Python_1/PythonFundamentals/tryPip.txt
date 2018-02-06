@@ -1,0 +1,38 @@
+tried to install Django with pip but it wouldn't work.  Look back a page and saw a "$" in front of pip so tried it again and it worked
+--got this back
+usage: install [-bCcpSsv] [-B suffix] [-f flags] [-g group] [-m mode]
+               [-o owner] file1 file2
+       install [-bCcpSsv] [-B suffix] [-f flags] [-g group] [-m mode]
+               [-o owner] file1 ... fileN directory
+       install -d [-v] [-g group] [-m mode] [-o owner] directory ...
+
+--looks like it telling me what it's doing while it's doing it
+
+$pip list command does not work for mac; it's $pip ls.  Got back my directory but don't see Django
+
+I don't know waht the about usage: means.  Am I suppose to run all these install commands?
+
+"freeze" command is not found nor is $ pip freeez command
+
+Ok.  got pip install after reading https://www.codingforentrepreneurs.com/blog/install-django-on-mac-or-linux/
+
+then I went back and tried commands from learning platform; Django installed 7/extras/lib/python wiht a number of exceptions in red.
+
+pip list gave me a Deprcation: warning adn then list of packages installed with their version #'s
+
+When asking to install Django again, got "requirement already satisfied adn installing collected packages: Django and exceptions: same ones as last time
+
+pip freeze--got same list of packages with the exceptions and depreciation warnings
+
+"ls" I see a txt file
+
+when pipe freeze > requirements.txt it created txt doc with same info as pip freeze
+
+when "pip uninstall Django" got message in read "Cannot uninstall requirement Django, not installed". I don't know what's "not installed" 
+
+Django must never have been installed!
+
+"pip show Django" commnad yields nothing
+
+"pip search Flask" got back a long list of flask related programs with versions
+

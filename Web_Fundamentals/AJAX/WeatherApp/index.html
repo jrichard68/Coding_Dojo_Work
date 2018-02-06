@@ -4,9 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <script type= "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Weather App</title>
+    <script>
+        $(document).ready(function() {
+            
+           $('form').submit(function() {
+                var api_key = 'cfed6e5241c5568766690b58a731fa76';
+                var city = $('input[name = "city"]').val();
+                //console.log(city);
+            $.get(`http:api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${api_key}`, function(res){
+                    console.log(res)
+                    var html_str = '';
+                    html_str += `<h2> ${res.name} </h2>`;
+                    html_str += `<p> Temperature: ${res.main.temp} F</p>`;
+                    $('#landing_spot').html(html_str);
+                }, 'jsonp');
+                
+                // your code here (build up your url)
+                //$.get(url, function(res) {
+                    // your code here
+            // }, 'json');
+                // don't forget to return false so the page doesn't refresh
+               return false;
+            })
+       });
+
+    </script>
+
 </head>
 <body>
-    
+    <form action="#">
+        <input type="text" name="city" id="city" placeholder="city">
+        <input type="submit" value="Search Weather">
+    </form>
+    <div id="landing_spot">
+
+    </div>
+
 </body>
 </html>
