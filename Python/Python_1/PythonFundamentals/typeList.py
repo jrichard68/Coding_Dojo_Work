@@ -7,14 +7,14 @@ def typeList(item):
             sum = sum + item[count]
             count +=1
         else:
-            newString = newString + item[count]
+            newString.append(item[count])
             count +=1
     if all(type(n) is int for n in item) == True:
         print "The list you entered is of integer type."
-        print "Sum: " + sum
+        print "Sum: ", sum
     else:
         print "The list you entered is of string type."
-        print "String: " + newString
+        print "String: ", newString
 
 typeList(["love","peace"])
 typeList([5,7])
