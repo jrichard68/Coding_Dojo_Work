@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Results</title>
+</head>
+<body>
+    <h2>You guessed:</h2>
+    <h3>{{ session['num_guess'] }}</h3>
+    <h3>{{ response }}</h3>
+    <form action="/more_guesses" method="post">
+        <input type="text" name="num_guess" placeholder="Enter number here">
+        <button type="submit">Submit</button>
+    </form>
+    <form action="/">
+        <button type="submit">Start Over or Play Again</button>
+    </form>
+
+</body>
+</html>
