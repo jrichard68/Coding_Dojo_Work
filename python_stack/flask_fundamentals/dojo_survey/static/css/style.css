@@ -4,5 +4,5 @@
     padding: 10px;
 }
 input, select {
-    display: block;
+    display: inline-block;
 }

@@ -8,6 +8,13 @@
 </head>
 <body>
     <h1>Submitted Info</h1>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <p>{{message}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
     <h2>Name: {{ name }}</h2>
     <h2>Dojo Location:  {{ location }}</h2>
     <h2>Favorite Language:  {{ language }}</h2>

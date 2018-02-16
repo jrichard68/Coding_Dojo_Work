@@ -43,6 +43,8 @@
         </form>
     </div>
     <h4>Activites</h4>
-    <p>{{ session['activityList'] }}</p>
+    {% for activity in session['activityList'] %}
+    <p>{{ activity}}{{ date }}</p>
+    {% endfor %}
 </body>
 </html>
