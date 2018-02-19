@@ -34,7 +34,7 @@ def submit():
     elif str(request.form['password']) != str(request.form['confirm_password']):
         flash("Password and Password Confirmation must match.")
     else:
-        flash("Success!")
+        flash("Thank you for submitting your information.")
     return redirect('/')
 
 app.run(debug=True)

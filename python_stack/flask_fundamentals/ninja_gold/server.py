@@ -14,24 +14,24 @@ def index():
 @app.route('/process_money', methods=['POST'])
 def total_gold():
     import random
-    import datetime
-    date = datetime.datetime.now()
+    from time import localtime, strftime
+    time = strftime("%a, %b %d, %I:%M %p", localtime())
     if request.form["building"] == "farm":
         session['found_gold'] = random.randrange(10, 21)
         session['total_gold'] = session['total_gold'] + session['found_gold']
-        activity = "Earned "+ str(session['found_gold']) + " golds from the farm!"
+        activity = "Earned "+ str(session['found_gold']) + " golds from the farm!  " + time
         session['activityList'].append(activity)
         return render_template('index.html')
     elif request.form["building"] == "cave":
         session['found_gold'] = random.randrange(5, 11)
         session['total_gold'] = session['total_gold'] + session['found_gold']
-        activity = "Earned "+ str(session['found_gold']) + " golds from the cave!"
+        activity = "Earned "+ str(session['found_gold']) + " golds from the cave!  " + time
         session['activityList'].append(activity)
         return render_template('index.html')
     elif request.form["building"] == "house":
         session['found_gold'] = random.randrange(2, 6)
         session['total_gold'] = session['total_gold'] + session['found_gold']
-        activity = "Earned "+ str(session['found_gold']) + " golds from the house!"
+        activity = "Earned "+ str(session['found_gold']) + " golds from the house!  " + time
         session['activityList'].append(activity)
         return render_template('index.html')
     else:
@@ -39,13 +39,13 @@ def total_gold():
       if num == 1:
           session['found_gold'] = random.randrange(0, 51)
           session['total_gold'] = session['total_gold'] + session['found_gold']
-          activity = "Earned "+ str(session['found_gold']) + " golds from the casin!"
+          activity = "Earned "+ str(session['found_gold']) + " golds from the casin!  " + time
           session['activityList'].append(activity)
           return render_template('index.html')
       else:
           session['lost_gold'] = random.randrange(0, 51)
           session['total_gold'] = session['total_gold'] - session['lost_gold']
-          activity = "Lost "+ str(session['lost_gold']) + " golds from the casino!"
+          activity = "Lost "+ str(session['lost_gold']) + " golds from the casino!  "  + time
           session['activityList'].append(activity)
           return render_template('index.html')
       
@@ -53,6 +53,5 @@ def total_gold():
 def clear():
   session.clear()
   return redirect('/')
-  '''return render_template('index.html')'''
 
 app.run(debug=True) # run our server
