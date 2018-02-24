@@ -1,0 +1,25 @@
+input {
+    display: block;
+    padding:5px;
+    width: 200px;
+}
+#submit {
+    padding: 5px;
+    margin-top: 10px;
+    width: 70px;
+
+}
+h3 {
+    width: 400px;
+    margin-left: 100px;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid black;
+}
+h2, table {
+    margin-left: 100px;
+}
+button {
+    margin-left: 100px;
+    margin-top: 10px;
+}

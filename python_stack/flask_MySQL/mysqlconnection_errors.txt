@@ -1,0 +1,26 @@
+#1
+
+Traceback (most recent call last):
+  File "server.py", line 2, in <module>
+    from mysqlconnection import MySQLConnector
+  File "/Users/jamierichard/coding_dojo_work/python_stack/flask_MySQL/friends_copy/mysqlconnection.py", line 9
+    'database': , # we got db as an argument
+                ^
+SyntaxError: invalid syntax
+
+Fix:  make sure include 'db" as an argument 
+
+
+#2
+
+OperationalError: (_mysql_exceptions.OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)") (Background on this error at: http://sqlalche.me/e/e3q8)
+
+Fix: make sure to include the correct port number to match the port of me SQL server
+
+#3 
+
+Traceback (most recent call last):
+  File "server.py", line 2, in <module>
+    from mysqlconnection import MySQLConnector
+
+Fix: make sure to include the last module method to be called by the user in server.py

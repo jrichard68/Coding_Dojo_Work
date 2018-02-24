@@ -1,0 +1,28 @@
+#email {
+    /*display: block;*/
+    padding: 5px;
+    margin: 5px;
+    width: 300px;
+}
+#submit {
+    padding: 10px;
+}
+#error {
+    background-color: red;
+    margin-left: 100px;
+}
+h3 {
+    background-color: green;
+    width: 400px;
+    margin-left: 100px;
+    padding: 5px;
+    text-align: center;
+    border: 2px solid black;
+}
+h2, table {
+    margin-left: 100px;
+}
+button {
+    margin-left: 100px;
+    margin-top: 10px;
+}
