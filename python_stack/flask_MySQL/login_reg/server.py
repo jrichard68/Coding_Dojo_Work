@@ -16,38 +16,32 @@ def index():
 
 @app.route('/process', methods=['POST'])
 def register():
+    errors = []
     pass_word = request.form['pass_word']
     hashed_pw = md5.new(pass_word + salt).hexdigest()
     if len(request.form['first_name']) < 2:
-        flash("First Name cannot be blank!")
-        return redirect('/')
-    elif not str.isalpha(str(request.form['first_name'])):
-        flash("First Name can only contain letters.")
-        return redirect('/')
-    elif len(request.form['last_name']) < 2:
-        flash("Last Name cannot be blank!")
-        return redirect('/')
-    elif not str.isalpha(str(request.form['last_name'])):
-        flash("Last Name cannot contain any numbers.")
-        return redirect('/')
-    elif len(request.form['email']) < 1:
-        flash("Email cannot be blank!")
-        return redirect('/')
-    elif not EMAIL_REGEX.match(request.form['email']):
-        flash("Invalid Email Address!")
-        return redirect('/')
-    elif len(request.form['pass_word']) < 1:
-        flash("Password cannot be blank!")
-        return redirect('/')
-    elif len(request.form['pass_word']) < 8:
-        flash("Password must be more than 8 characters!")
-        return redirect('/')
-    elif len(request.form['confirm_password']) < 1:
-        flash("Confirm Password cannot be blank!")
-        return redirect('/')
-    elif str(request.form['pass_word']) != str(request.form['confirm_password']):
-        flash("Password and Password Confirmation must match.")
-        return redirect('/')
+        error.append("First Name cannot be blank!")
+    if not str.isalpha(request.form['first_name']):
+        error.append("First Name can only contain letters.")
+    if len(request.form['last_name']) < 2:
+        error.append("Last Name cannot be blank!")
+    if not str.isalpha(request.form['last_name']):
+        error.append("Last Name cannot contain any numbers.")
+    if len(request.form['email']) < 1:
+        error.append("Email cannot be blank!")
+    if not EMAIL_REGEX.match(request.form['email']):
+        error.append("Invalid Email Address!")
+    if len(request.form['pass_word']) < 1:
+        error.append("Password cannot be blank!")
+    if len(request.form['pass_word']) < 8:
+        error.append("Password must be more than 8 characters!")
+    if len(request.form['confirm_password']) < 1:
+        error.append("Confirm Password cannot be blank!")
+    if request.form['pass_word'] != request.form['confirm_password']:
+        error.append("Password and Password Confirmation must match.")
+    if len(errors) > 0:
+      for error in errors:
+        flash(error)
     else:
         query = "INSERT INTO users (first_name, last_name, email, pass_word, salt, created_at, updated_at) VALUES (:first_name, :last_name, :email, :hashed_pw, :salt, NOW(), NOW())"
         data = {
