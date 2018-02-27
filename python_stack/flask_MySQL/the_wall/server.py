@@ -92,7 +92,7 @@ def login():
 
 @app.route('/wall')
 def wall():
-    return render_template('wall.html', name = session['first_name'])
+    return render_template('wall.html')#, name = session['first_name'])
 
 @app.route('/message')
 def message():
