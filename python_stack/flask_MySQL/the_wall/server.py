@@ -80,6 +80,7 @@ def login():
         if user[0]['password'] == encrypted_password:
             query = "SELECT first_name FROM users WHERE users.email = email LIMIT 1"
             first_name = mysql.query_db(query)[0]['first_name']
+            print first_name
             session['first_name'] = first_name
             print session['first_name']
             return redirect('/wall')
@@ -92,7 +93,7 @@ def login():
 
 @app.route('/wall')
 def wall():
-    return render_template('wall.html')#, name = session['first_name'])
+    return render_template('wall.html')
 
 @app.route('/message')
 def message():
