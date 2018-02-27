@@ -82,7 +82,7 @@ def login():
             #first_name = mysql.query_db(query)[0]['first_name']
             #print first_name
             #session['first_name'] = first_name
-            #print session['first_name']
+            print session['first_name']
             return redirect('/wall')
         else:
             flash("Invalid Password!")
