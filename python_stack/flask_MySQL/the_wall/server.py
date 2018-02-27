@@ -78,11 +78,11 @@ def login():
     if len(user) != 0:
         encrypted_password = md5.new(password + user[0]['salt']).hexdigest()
         if user[0]['password'] == encrypted_password:
-            query = "SELECT first_name FROM users WHERE users.email = email LIMIT 1"
-            first_name = mysql.query_db(query)[0]['first_name']
-            print first_name
-            session['first_name'] = first_name
-            print session['first_name']
+            #query = "SELECT first_name FROM users WHERE users.email = :email LIMIT 1"
+            #first_name = mysql.query_db(query)[0]['first_name']
+            #print first_name
+            #session['first_name'] = first_name
+            #print session['first_name']
             return redirect('/wall')
         else:
             flash("Invalid Password!")
