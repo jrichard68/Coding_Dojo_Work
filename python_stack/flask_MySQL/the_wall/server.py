@@ -8,17 +8,21 @@ salt = binascii.b2a_hex(os.urandom(15))
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 app = Flask(__name__)
 app.secret_key = "ThisIsSecret!"
-mysql = MySQLConnector(app,'login_regdb')
+mysql = MySQLConnector(app,'the_wall')
 
 @app.route('/')
 def index():
+    if not 'first_name' in session:
+        session['first_name'] = 0
     return render_template('index.html')
 
 @app.route('/process', methods=['POST'])
 def register():
+    session['first_name'] = request.form['first_name']
+    print session['first_name']
     errors = False
-    pass_word = request.form['pass_word']
-    hashed_pw = md5.new(pass_word + salt).hexdigest()
+    password = request.form['password']
+    hashed_pw = md5.new(password + salt).hexdigest()
     if len(request.form['first_name']) < 2:
         flash("First Name must be at least 2 letters!")
         errors = True
@@ -37,23 +41,23 @@ def register():
     if not EMAIL_REGEX.match(request.form['email']):
         flash("Invalid Email Address!")
         errors = True
-    if len(request.form['pass_word']) < 1:
+    if len(request.form['password']) < 1:
         flash("Password cannot be blank!")
         errors = True
-    if len(request.form['pass_word']) < 8:
+    if len(request.form['password']) < 8:
         flash("Password must be more than 8 characters!")
         errors = True
     if len(request.form['confirm_password']) < 1:
         flash("Confirm Password cannot be blank!")
         errors = True
-    if request.form['pass_word'] != request.form['confirm_password']:
+    if request.form['password'] != request.form['confirm_password']:
         flash("Password and Password Confirmation must match.")
         errors = True
     print errors
     if errors:
         return redirect("/")
     else:
-        query = "INSERT INTO users (first_name, last_name, email, pass_word, salt, created_at, updated_at) VALUES (:first_name, :last_name, :email, :hashed_pw, :salt, NOW(), NOW())"
+        query = "INSERT INTO users (first_name, last_name, email, password, salt, created_at, updated_at) VALUES (:first_name, :last_name, :email, :hashed_pw, :salt, NOW(), NOW())"
         data = {
             'first_name': request.form['first_name'],
             'last_name': request.form['last_name'],
@@ -62,19 +66,23 @@ def register():
             'salt': salt
             }
         mysql.query_db(query, data)
-        return redirect('/success')
+        return redirect('/wall')
 
 @app.route('/login', methods=['POST'])
 def login():
     email = request.form['email']
-    pass_word = request.form['pass_word']
+    password = request.form['password']
     query = "SELECT * FROM users WHERE users.email = :email LIMIT 1"
     data = {'email': email}
     user = mysql.query_db(query, data)
     if len(user) != 0:
-        encrypted_password = md5.new(pass_word + user[0]['salt']).hexdigest()
-        if user[0]['pass_word'] == encrypted_password:
-            return redirect('/success')
+        encrypted_password = md5.new(password + user[0]['salt']).hexdigest()
+        if user[0]['password'] == encrypted_password:
+            query = "SELECT first_name FROM users WHERE users.email = email LIMIT 1"
+            first_name = mysql.query_db(query)[0]['first_name']
+            session['first_name'] = first_name
+            print session['first_name']
+            return redirect('/wall')
         else:
             flash("Invalid Password!")
             return redirect('/')
@@ -82,9 +90,13 @@ def login():
         flash("Invalid Email Address!")
         return redirect('/')
 
-@app.route('/success')
-def success():
-    return render_template('success.html')
+@app.route('/wall')
+def wall():
+    return render_template('wall.html', name = session['first_name'])
+
+@app.route('/message')
+def message():
+    return render_template('wall.html')
 
 @app.route('/clear')
 def clear():

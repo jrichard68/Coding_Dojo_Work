@@ -1,0 +1,1 @@
+SELECT * FROM the_wall.comments;

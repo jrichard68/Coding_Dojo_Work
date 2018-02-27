@@ -33,7 +33,6 @@ def process():
 
 @app.route('/success')
 def success():
-    #query = "SELECT * FROM users"
     query = "SELECT email, DATE_FORMAT(created_at, '%m %d %y %h %i %p') FROM users"
     users = mysql.query_db(query)   # run query with query_db()
     return render_template('success.html', all_users = users)

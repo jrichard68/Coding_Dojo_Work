@@ -1,7 +1,7 @@
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
-  <title>Login and Register</title>
+  <title>The Wall</title>
 </head>
 <body>
     {% with messages = get_flashed_messages() %}
@@ -15,21 +15,21 @@
     {% endwith %}
     
     <fieldset>
-        <legend>Register</legend>
+        <legend>Register for The CodingDojo Wall</legend>
         <form action='/process' method='POST'>
             <label for="first_name">First Name: <input type="text" name="first_name"></label>
             <label for="last_name">Last Name: <input type="text" name="last_name"></label>
             <label for="email">Email: <input type="text" name="email"></label>
-            <label for="pass_word">Password: <input type="text" name="pass_word"></label>
+            <label for="password">Password: <input type="text" name="password"></label>
             <label for="confirm_password">Confirm Password: <input type="text" name="confirm_password"></label>
             <input type="submit" value="Submit" id="submit">
         </form>
       </fieldset>
       <fieldset>
-          <legend>Login</legend>
+          <legend>Login to The CodingDojo Wall</legend>
           <form action='/login' method='POST'>
               <label for="email">Email: <input type="text" name="email"></label>
-              <label for="pass_word">Password: <input type="text" name="pass_word"></label>
+              <label for="password">Password: <input type="text" name="password"></label>
               <input type="submit" value="Submit" id="submit">
           </form>
         </fieldset>

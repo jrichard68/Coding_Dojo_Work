@@ -10,7 +10,7 @@ input {
 
 }
 h3 {
-    width: 400px;
+    *width: 400px;
     margin-left: 100px;
     padding: 5px;
     text-align: center;
