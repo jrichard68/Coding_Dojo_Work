@@ -101,6 +101,7 @@ def message():
 @app.route('/clear')
 def clear():
     session.clear()
+    print session
     return redirect('/')
 
 app.run(debug=True)
