@@ -14,6 +14,10 @@ mysql = MySQLConnector(app,'the_wall')
 def index():
     if not 'first_name' in session:
         session['first_name'] = 0
+    if not 'id' in session:
+        session['id'] = 0
+    if not 'message_id' in session:
+        session['message_id'] = 0
     return render_template('index.html')
 
 @app.route('/process', methods=['POST'])
@@ -78,11 +82,10 @@ def login():
     if len(user) != 0:
         encrypted_password = md5.new(password + user[0]['salt']).hexdigest()
         if user[0]['password'] == encrypted_password:
-            #query = "SELECT first_name FROM users WHERE users.email = :email LIMIT 1"
-            #first_name = mysql.query_db(query)[0]['first_name']
-            #print first_name
-            #session['first_name'] = first_name
+            session['first_name'] = user[0]['first_name']
+            session['id'] = user[0]['id']
             print session['first_name']
+            print session['id']
             return redirect('/wall')
         else:
             flash("Invalid Password!")
@@ -93,11 +96,39 @@ def login():
 
 @app.route('/wall')
 def wall():
-    return render_template('wall.html')
+    # Query for all message posts
+    query = "SELECT message, DATE_FORMAT(created_at, '%M, %D') AS date, DATE_FORMAT(created_at, '%Y') AS year from messages"
+    message_posts = mysql.query_db(query)
+    query = "SELECT CONCAT(first_name, ' ', last_name) AS full_name FROM users WHERE users.id = {}".format(session['id'])
+    full_name = mysql.query_db(query)[0]['full_name']
 
-@app.route('/message')
+    #Query for Comments on specific posts
+    query = "SELECT comment, DATE_FORMAT(comments.created_at, '%M, %D') AS date, DATE_FORMAT(comments.created_at, '%Y') AS year from comments JOIN messages ON comments.user_id = messages.user_id JOIN users ON messages.user_id = users.id WHERE messages.id = {}".format(session['message_id'])
+    comments = mysql.query_db(query)
+    return render_template('wall.html', all_posts = message_posts, name = full_name, all_comments = comments)
+
+@app.route('/message', methods = ['POST'])
 def message():
-    return render_template('wall.html')
+    message_post = request.form['message']
+    query = "INSERT INTO messages (message, created_at, updated_at, user_id) VALUES (:message_post, NOW(), NOW(), :id)"
+    data = {
+            'message_post': request.form['message'],
+            'id': session['id']
+            }
+    session['message_id'] = mysql.query_db(query, data)
+    return redirect('/wall')
+
+@app.route('/comment', methods = ['POST'])
+def comment():
+    comment_post = request.form['comment']
+    query = "INSERT INTO comments (comment, created_at, updated_at, user_id, message_id) VALUES (:comment_post, NOW(), NOW(), :id, :message_id)"
+    data = {
+            'comment_post': request.form['comment'],
+            'id': session['id'],
+            'message_id': session['message_id']
+            }
+    mysql.query_db(query, data)
+    return redirect('/wall')
 
 @app.route('/clear')
 def clear():
