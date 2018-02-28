@@ -21,13 +21,15 @@
         </form>
     </div>
     <div>
-        {% for post in all_posts: %}
-            <p>{{ name }} - {{ post['date'] }} {{ post['year'] }}</p>
-            <p id="post">{{ post['message'] }}</p>
-        {% endfor %}
-        {% for post in all_comments: %}
-            <p>{{ name }} - {{ post['date'] }} {{ post['year'] }}</p>
-            <p id="comment">{{ post['comment'] }}</p>
+        {% for message in all_posts: %}
+            <p>{{ message['full_name'] }} - {{ message['date'] }} {{ message['year'] }}</p>
+            <p>{{ message['message'] }}</p>
+                    {% for comment in all_comments: %}
+                        {% if messsage['id'] == comment['message_id'] %}
+                        <p>{{ comment['full_name'] }} - {{ comment['date'] }} {{ comment['year'] }}</p>
+                        <p>{{ comment['comment'] }}</p>
+                        {% endif %}
+                    {% endfor %}
         {% endfor %}
     </div>
     <div id="comment">

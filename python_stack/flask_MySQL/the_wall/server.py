@@ -97,15 +97,15 @@ def login():
 @app.route('/wall')
 def wall():
     # Query for all message posts
-    query = "SELECT message, DATE_FORMAT(created_at, '%M, %D') AS date, DATE_FORMAT(created_at, '%Y') AS year from messages"
+    query = "SELECT messages.message, DATE_FORMAT(messages.created_at, '%M, %D') AS date, DATE_FORMAT(messages.created_at, '%Y') AS year, CONCAT(users.first_name, ' ', users.last_name) AS full_name FROM messages JOIN users ON messages.user_id = users.id"
     message_posts = mysql.query_db(query)
-    query = "SELECT CONCAT(first_name, ' ', last_name) AS full_name FROM users WHERE users.id = {}".format(session['id'])
-    full_name = mysql.query_db(query)[0]['full_name']
-
+    print message_posts
+    
     #Query for Comments on specific posts
-    query = "SELECT comment, DATE_FORMAT(comments.created_at, '%M, %D') AS date, DATE_FORMAT(comments.created_at, '%Y') AS year from comments JOIN messages ON comments.user_id = messages.user_id JOIN users ON messages.user_id = users.id WHERE messages.id = {}".format(session['message_id'])
-    comments = mysql.query_db(query)
-    return render_template('wall.html', all_posts = message_posts, name = full_name, all_comments = comments)
+    query = "SELECT comments.comment, DATE_FORMAT(comments.created_at, '%M, %D') AS date, DATE_FORMAT(comments.created_at, '%Y') AS year, CONCAT(users.first_name, ' ', users.last_name) AS full_name, messages.id, comments.message_id FROM comments JOIN messages ON comments.user_id = messages.user_id JOIN users ON messages.user_id = users.id"
+    comment_posts = mysql.query_db(query)
+    print comment_posts
+    return render_template('wall.html', all_posts = message_posts,all_comments = comment_posts)
 
 @app.route('/message', methods = ['POST'])
 def message():
