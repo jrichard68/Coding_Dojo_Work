@@ -97,7 +97,7 @@ def login():
 @app.route('/wall')
 def wall():
     # Query for all message posts
-    query = "SELECT messages.message, DATE_FORMAT(messages.created_at, '%M, %D') AS date, DATE_FORMAT(messages.created_at, '%Y') AS year, CONCAT(users.first_name, ' ', users.last_name) AS full_name FROM messages JOIN users ON messages.user_id = users.id"
+    query = "SELECT messages.message, DATE_FORMAT(messages.created_at, '%M, %D') AS date, DATE_FORMAT(messages.created_at, '%Y') AS year, CONCAT(users.first_name, ' ', users.last_name) AS full_name, messages.id FROM messages JOIN users ON messages.user_id = users.id"
     message_posts = mysql.query_db(query)
     print message_posts
     
