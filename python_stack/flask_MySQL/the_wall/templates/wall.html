@@ -14,49 +14,27 @@
         <a href="/clear">Log Off</a>
     </div>
     <div id="post">
-        <h3>Post a message</h3>
+        <h5>Post a message</h5>
         <form action="/message" method="POST">
             <input type="text" name="message">
             <button type="submit">Post message</button>
         </form>
     </div>
-    <!--<div>
-        {% for message in all_posts: %}
-            <p>{{ message['full_name'] }} - {{ message['date'] }} {{ message['year'] }}</p>
-            <p>{{ message['message'] }}</p>
-                    {% for comment in all_comments: %}
-                        {% if message['id'] == comment['message_id'] %}
-                        <p>{{ comment['full_name'] }} - {{ comment['date'] }} {{ comment['year'] }}</p>
-                        <p>{{ comment['comment'] }}</p>
-                        {% endif %}
-                    {% endfor %}
-                <h3>Post a comment</h3>
-                <form action="/comment" method="POST">
-                    <input type="hidden" name="post_id" value="{{ message['id'] }}">
-                    <input type="text" name="comment">
-                    <button type="submit">Post comment</button>
-                </form>  
-        {% endfor %}
-    </div>-->
-
     <div>
         {% for message in all_posts: %}
             <p>{{ message['full_name'] }} - {{ message['date'] }} {{ message['year'] }}</p>
             <p>{{ message['message'] }}</p>
-            <form action="/comment" method="POST">
-                <input type="hidden" name="post_id" value="{{ message['id'] }}">
-                <input type="text" name="comment">
-                <button type="submit">Post comment</button>
-            </form>
+                <div class="comment">
                     {% for comment in all_comments: %}
-                            {% if comment['id'] == comment['message_id'] %}
+                            {% if message['id'] == comment['message_id'] %}
                                 <p>{{ comment['full_name'] }} - {{ comment['date'] }} {{ comment['year'] }}</p>
                                 <p>{{ comment['comment'] }}</p>
                             {% endif %}
                     {% endfor %}
-                <h3>Post a comment</h3>
-                <form action="/comment" method="POST">
-                    <input type="hidden" name="post_id" value="{{ message['id'] }}">
+                </div>
+                <h5 class="comment">Post a comment</h5>
+                <form class="comment" action="/comment/{{message['id']}}" method="POST">
+                    <input type="hidden" name="post_id">
                     <input type="text" name="comment">
                     <button type="submit">Post comment</button>
                 </form>

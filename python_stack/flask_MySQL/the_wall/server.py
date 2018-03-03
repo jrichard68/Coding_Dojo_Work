@@ -16,14 +16,11 @@ def index():
         session['first_name'] = 0
     if not 'id' in session:
         session['id'] = 0
-    if not 'message_id' in session:
-        session['message_id'] = 0
     return render_template('index.html')
 
 @app.route('/process', methods=['POST'])
 def register():
     session['first_name'] = request.form['first_name']
-    print session['first_name']
     errors = False
     password = request.form['password']
     hashed_pw = md5.new(password + salt).hexdigest()
@@ -57,7 +54,6 @@ def register():
     if request.form['password'] != request.form['confirm_password']:
         flash("Password and Password Confirmation must match.")
         errors = True
-    print errors
     if errors:
         return redirect("/")
     else:
@@ -84,8 +80,6 @@ def login():
         if user[0]['password'] == encrypted_password:
             session['first_name'] = user[0]['first_name']
             session['id'] = user[0]['id']
-            print session['first_name']
-            print session['id']
             return redirect('/wall')
         else:
             flash("Invalid Password!")
@@ -97,14 +91,12 @@ def login():
 @app.route('/wall')
 def wall():
     # Query for all message posts
-    query = "SELECT messages.message, DATE_FORMAT(messages.created_at, '%M, %D') AS date, DATE_FORMAT(messages.created_at, '%Y') AS year, CONCAT(users.first_name, ' ', users.last_name) AS full_name, messages.id FROM messages JOIN users ON messages.user_id = users.id"
+    query = "SELECT messages.message, DATE_FORMAT(messages.created_at, '%M, %D') AS date, DATE_FORMAT(messages.created_at, '%Y') AS year, CONCAT(users.first_name, ' ', users.last_name) AS full_name, messages.id, messages.user_id FROM messages JOIN users ON messages.user_id = users.id ORDER BY messages.created_at DESC"
     message_posts = mysql.query_db(query)
-    print message_posts
     
     #Query for Comments on specific posts
-    query = "SELECT comments.comment, DATE_FORMAT(comments.created_at, '%M, %D') AS date, DATE_FORMAT(comments.created_at, '%Y') AS year, CONCAT(users.first_name, ' ', users.last_name) AS full_name, messages.id, comments.message_id FROM comments JOIN messages ON comments.user_id = messages.user_id JOIN users ON messages.user_id = users.id"
+    query = "SELECT comments.comment, DATE_FORMAT(comments.created_at, '%M, %D') AS date, DATE_FORMAT(comments.created_at, '%Y') AS year, CONCAT(users.first_name, ' ', users.last_name) AS full_name, comments.id, comments.message_id, comments.user_id FROM comments JOIN messages ON comments.message_id = messages.id JOIN users ON messages.user_id = users.id"
     comment_posts = mysql.query_db(query)
-    print comment_posts
     return render_template('wall.html', all_posts = message_posts,all_comments = comment_posts)
 
 @app.route('/message', methods = ['POST'])
@@ -118,14 +110,14 @@ def message():
     session['message_id'] = mysql.query_db(query, data)
     return redirect('/wall')
 
-@app.route('/comment', methods = ['POST'])
-def comment():
+@app.route('/comment/<message_id>', methods = ['POST'])
+def comment(message_id):
     comment_post = request.form['comment']
     query = "INSERT INTO comments (comment, created_at, updated_at, user_id, message_id) VALUES (:comment_post, NOW(), NOW(), :id, :message_id)"
     data = {
             'comment_post': request.form['comment'],
             'id': session['id'],
-            'message_id': session['message_id']
+            'message_id': message_id
             }
     mysql.query_db(query, data)
     return redirect('/wall')
@@ -133,7 +125,6 @@ def comment():
 @app.route('/clear')
 def clear():
     session.clear()
-    print session
     return redirect('/')
 
 app.run(debug=True)
