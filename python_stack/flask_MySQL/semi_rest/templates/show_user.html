@@ -12,8 +12,8 @@
     <p>Full Name: {{ one_user['full_name'] }}</p>
     <p>Email: {{ one_user['email'] }}</p>
     <p>Created at: {{ one_user['created_at'] }}</p>
-    <a href="users/{{ one_user['id'] }}/edit">Edit</a>
-    <a href="users/{{ one_user['id'] }}/destroy">Delete</a>
+    <a href="/users/{{ one_user['id'] }}/edit">Edit</a>
+    <a href="/users/{{ one_user['id'] }}/destroy">Delete</a>
     <a href="/users">Go Back</a>
 </body>
 </html>
